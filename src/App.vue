@@ -1,17 +1,20 @@
 <template>
   
   <TestApp msg="test"/>
+  <GetCoin/>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 //<img alt="Vue logo" src="./assets/logo.png">
 import TestApp from './components/Test.vue'
+import GetCoin from './components/Getcoin.vue'
 
 export default {
   name: 'App',
   components: {
-    TestApp
+    TestApp,
+    GetCoin
   }
 }
 </script>
