@@ -1,13 +1,19 @@
 <template>
   <div class="GetCoin">
        {{ info }}
+       <TestTable />
   </div>
+
 </template>
 
 <script>
 import axios from 'axios'
+import TestTable from './TestTable.vue'
 export default {
   name: 'GetCoin',
+  components: {
+    TestTable
+  },
   data() {
     return {
       info: 'Ajax 测试!!'
@@ -26,6 +32,7 @@ export default {
     });
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
