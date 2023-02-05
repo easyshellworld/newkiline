@@ -21,12 +21,12 @@ export default {
   },
   mounted () {
     axios
-      .get('/try/ajax/json_demo.json')
+      .get('/currency/kline?com_id=btc_usdt&symbol=btc&anchor=USDT&time=1675630081&market_id=338&period=1d&timestamp=1674739035146&code=ebc161c4c01e448626c3cc30518009d6&platform=web_pc&v=1.0.0&language=en_US&legal_currency=USD')
       /* .BASE_URL: '/api'
       .headers: {
         'Content-Type': 'application/json; charset=utf-8'
         } */
-      .then(response => (this.info = response))
+      .then(response => (this.info = response.data.data.kline))
       .catch(function (error) { // 请求失败处理
         console.log(error);
     });

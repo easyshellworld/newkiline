@@ -1,6 +1,6 @@
 [[redirects]]
-     from = "/try/ajax/json_demo.json"
-     to = "https://www.runoob.com/try/ajax/json_demo.json"
+     from = "/currency"
+     to = "https://api.mytokenapi.com/currency/"
      status = 200
      force = true # COMMENT: ensure that we always redirect
      headers = {X-From = "Netlify"}
