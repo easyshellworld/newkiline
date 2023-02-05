@@ -1,7 +1,7 @@
 <template>
   <div class="GetCoin">
-       {{ info }}
-       <TestTable />
+     <!--   {{ info }} -->
+       <TestTable  v-bind:kline="info"/>
   </div>
 
 </template>
@@ -12,11 +12,12 @@ import TestTable from './TestTable.vue'
 export default {
   name: 'GetCoin',
   components: {
-    TestTable
+    TestTable:TestTable
   },
   data() {
     return {
-      info: 'Ajax 测试!!'
+      info: 'Ajax 测试!!',
+     // kline:['你好']
     }
   },
   mounted () {

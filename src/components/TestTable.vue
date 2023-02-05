@@ -13,7 +13,7 @@
     </tr>
         <!--  <tr v-for='i in 5'>
            -->
-           <tr v-for='item in items' :key='item'>
+           <tr v-for='item in kline' :key='item'>
            <td>{{item.time}}</td>
            <td>{{item.open}}</td>
            <td>{{item.high}}</td>
@@ -61,9 +61,9 @@ export default {
   }]
       }
   },
-    name: 'TestTable',
+  name: 'TestTable',
   props: {
-    msg: String
+    kline: []
   },  
   
 }
