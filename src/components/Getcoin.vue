@@ -21,7 +21,7 @@ export default {
   },
   mounted () {
     axios
-      .get('/api/try/ajax/json_demo.json')
+      .get('/try/ajax/json_demo.json')
       /* .BASE_URL: '/api'
       .headers: {
         'Content-Type': 'application/json; charset=utf-8'

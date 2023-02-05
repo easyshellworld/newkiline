@@ -1,7 +1,7 @@
 [[redirects]]
-     from = "/api/try/ajax/*"
-     to = "https://www.runoob.com/try/ajax/"
-     status = 301
+     from = "/try/ajax/json_demo.json"
+     to = "https://www.runoob.com/try/ajax/json_demo.json"
+     status = 200
      force = true # COMMENT: ensure that we always redirect
      headers = {X-From = "Netlify"}
 
