@@ -1,5 +1,5 @@
 [[redirects]]
-     from = "/api/try/ajax/"
+     from = "/api/try/ajax/*"
      to = "https://www.runoob.com/try/ajax/"
      status = 200
      force = true # COMMENT: ensure that we always redirect
