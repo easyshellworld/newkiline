@@ -1,7 +1,9 @@
 <template>
-  <div class="GetCoin">
-     <!--   {{ info }} -->
-       <TestTable  v-bind:kline="info"/>
+  <div class="GetCoin" v-for="coin in coindata" :key="coin">
+
+           <h1> {{ coin.name }}</h1>
+       <TestTable  v-bind:kline="coin.kdata"/>
+      
   </div>
 
 </template>
@@ -9,6 +11,7 @@
 <script>
 import axios from 'axios'
 import TestTable from './TestTable.vue'
+import {gettoday,getlittledata} from './Getdata.js'
 export default {
   name: 'GetCoin',
   components: {
@@ -16,21 +19,42 @@ export default {
   },
   data() {
     return {
-      info: 'Ajax 测试!!',
-     // kline:['你好']
+      //info: 'Ajax 测试!!',
+    coindata: [
+        {
+        name:'btc',
+        kdata:[]
+      },
+      {
+        name:'eth',
+        kdata:[]
+      },
+      {
+        name:'apt530',
+        kdata:[]
+      },
+      {
+        name:'ape613',
+        kdata:[]
+      }
+    ]
+
     }
   },
   mounted () {
+    for( let item of this.coindata){
     axios
-      .get('/currency/kline?com_id=btc_usdt&symbol=btc&anchor=USDT&time=1675630081&market_id=338&period=1d&timestamp=1674739035146&code=ebc161c4c01e448626c3cc30518009d6&platform=web_pc&v=1.0.0&language=en_US&legal_currency=USD')
+      .get(gettoday(item.name))
       /* .BASE_URL: '/api'
-      .headers: {
+      .headers: {()
         'Content-Type': 'application/json; charset=utf-8'
         } */
-      .then(response => (this.info = response.data.data.kline))
+      .then(response => (item.kdata = getlittledata(response.data.data.kline)))
       .catch(function (error) { // 请求失败处理
         console.log(error);
     });
+    }
+   
   }
 }
 
