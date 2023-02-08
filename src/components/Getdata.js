@@ -15,7 +15,7 @@ exports.gettoday=(coinname)=>{
 
 exports.getlittledata=(klinedata)=>{
     let arr=[]
-    for(let i=0;i<8;i++){
+    for(let i=0;i<9;i++){
         klinedata[i].time=timestampToTime(klinedata[i].time)
         arr.push(klinedata[i])
     }
@@ -25,7 +25,7 @@ exports.getlittledata=(klinedata)=>{
 exports.getATR=(klinedata)=>{
     let str=''
     let sumatr=0
-    for(let i=0;i<klinedata.length;i++){
+    for(let i=0;i<klinedata.length-1;i++){
         let atr=keepThreeNum(Math.max(klinedata[i].high,klinedata[i+1].close)-Math.min(klinedata[i].low,klinedata[i].close))
         if(i===0){
             str+='today:'+atr
