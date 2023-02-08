@@ -36,7 +36,7 @@ exports.getATR=(klinedata)=>{
         sumatr+=parseFloat(atr)
     }
     sumatr=sumatr/7
-    return str + " ATR7:"+ sumatr/7
+    return str + " ATR7:"+ sumatr
 }
 
 function timestampToTime(timestamp) {
