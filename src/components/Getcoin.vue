@@ -2,6 +2,7 @@
   <div class="GetCoin" v-for="coin in coindata" :key="coin">
 
            <h1> {{ coin.name }}</h1>
+                {{coin.atr}}
        <TestTable  v-bind:kline="coin.kdata"/>
       
   </div>
@@ -11,7 +12,7 @@
 <script>
 import axios from 'axios'
 import TestTable from './TestTable.vue'
-import {gettoday,getlittledata} from './Getdata.js'
+import {gettoday,getlittledata,getATR} from './Getdata.js'
 export default {
   name: 'GetCoin',
   components: {
@@ -23,19 +24,23 @@ export default {
     coindata: [
         {
         name:'btc',
-        kdata:[]
+        kdata:[],
+        atr:''
       },
       {
         name:'eth',
-        kdata:[]
+        kdata:[],
+        atr:''
       },
       {
         name:'apt530',
-        kdata:[]
+        kdata:[],
+        atr:''
       },
       {
         name:'ape613',
-        kdata:[]
+        kdata:[],
+        atr:''
       }
     ]
 
@@ -49,10 +54,16 @@ export default {
       .headers: {()
         'Content-Type': 'application/json; charset=utf-8'
         } */
-      .then(response => (item.kdata = getlittledata(response.data.data.kline)))
+      .then(response => {
+        item.kdata = getlittledata(response.data.data.kline)
+        item.atr=getATR(item.kdata)
+       
+    })
       .catch(function (error) { // 请求失败处理
         console.log(error);
     });
+    
+       
     }
    
   }
