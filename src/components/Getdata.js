@@ -31,9 +31,11 @@ exports.getATR=(klinedata)=>{
             str+='today:'+atr
         }else if(i===1){
             str+=' ATR:'+atr
-        }
+            sumatr+=parseFloat(atr)
+        }else{
        // console.log(atr)
         sumatr+=parseFloat(atr)
+        }
     }
     sumatr=sumatr/7
     return str + " ATR7:"+ sumatr
