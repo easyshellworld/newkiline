@@ -15,7 +15,7 @@ exports.gettoday=(coinname)=>{
 
 exports.getlittledata=(klinedata)=>{
     let arr=[]
-    for(let i=0;i<7;i++){
+    for(let i=0;i<8;i++){
         klinedata[i].time=timestampToTime(klinedata[i].time)
         arr.push(klinedata[i])
     }
