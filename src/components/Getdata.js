@@ -25,7 +25,7 @@ exports.getlittledata=(klinedata)=>{
 exports.getATR=(klinedata)=>{
     let str=''
     let sumatr=0
-    for(let i=0;i<klinedata.length-1;i++){
+    for(let i=0;i<klinedata.length;i++){
         let atr=keepThreeNum(Math.max(klinedata[i].high,klinedata[i+1].close)-Math.min(klinedata[i].low,klinedata[i].close))
         if(i===0){
             str+='today:'+atr
