@@ -2,7 +2,7 @@
 /* eslint-disable vue/require-v-for-key */
 <template>
   <div class="TestTable">
-     <table border="1">
+     <table >
     <tr>
         <th>time</th>
         <th>open</th>
@@ -90,5 +90,21 @@ table{
 margin-right: auto;
 margin-left: auto;
  
+ 
 }
+table,th,td{
+    border:1px dotted #000;
+    
+}
+
+td :nth-child(odd){
+  background-color: white;
+  
+
+}
+td :nth-child(even){
+  background-color: cornflowerblue;
+  
+
+} 
 </style>
