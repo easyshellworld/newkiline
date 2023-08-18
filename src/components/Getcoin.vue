@@ -46,7 +46,18 @@ export default {
         name:'ape613',
         kdata:[],
         atr:''
-      }
+      },
+       {
+        name:'tron',
+        kdata:[],
+        atr:''
+      },
+       {
+        name:'solana',
+        kdata:[],
+        atr:''
+      },
+      
     ]
 
     }
